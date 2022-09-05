@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dokumen</title>
+    <link rel="stylesheet" href="https://unpkg.com/video.js@7.0.0/dist/video-js.css">
+    <script src="https://unpkg.com/video.js@7.0.0/dist/video.min.js"></script>
+</head>
+<body>
+    <h1>Hello World RTSP With FFMPEG Sample</h1>
+    <!-- <video id="video-stream" autoplay controls></video> -->
+    <video id="video-stream" class="video-js" data-setup='{ "controls": true, "autoplay": true, "preload": "auto" }'>
+        <source src="http://localhost/stream/video.m3u8" type="application/x-mpegURL">
+    </video>
+</body>
+<script>
+    var video = videojs('video-stream')
+    video.play()
+</script>
+<!-- <script>
+    var video = document.getElementById('video-stream')
+    if(video) {
+        var hls = new Hls()
+        hls.attachMedia(video)
+        hls.on(Hls.Events.MEDIA_ATTACHED, () => {
+            console.log("TESTING LIVE STREAM")
+            hls.loadSource('http://localhost/stream/video.m3u8')
+            hls.on(Hls.Events.MANIFEST_PARSED, (event, data) => {
+                console.log("TES AJA")
+            })
+        })
+    }
+</script> -->
+</html>

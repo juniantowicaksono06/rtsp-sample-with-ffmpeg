@@ -1,0 +1,9 @@
+version: '3'
+services:
+  nginx:
+    container_name: main_nginx
+    ports: 
+      - "80:80"
+    build: .
+    volumes:
+      - ./mnt:/app
